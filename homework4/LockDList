@@ -1,0 +1,37 @@
+package list;
+
+public class LockDList extends DList {
+		 
+		 protected LockDListNode newNode(Object item, DListNode prev, DListNode next) {
+		        return new LockDListNode(item, prev, next);
+		    }
+		 
+		 public LockDList() { 
+		        super();    
+		    }
+
+		    /**
+		     * remove() removes "node" from this DList. If "node" is null, do nothing.
+		     * Performance: runs in O(1) time.
+		     */
+		 public void remove(DListNode node) {
+			    // Your solution here.
+				  if (node == null) {}
+				  else { 
+					  node.next.prev = node.prev;
+					  node.prev.next = node.next;
+					  size--;
+		    }
+				  }
+
+		    public void lockNode(DListNode node) {
+		        if(node == null){
+		            return;
+		        }else{
+		            ((LockDListNode)node).lock = true;
+		        }
+
+		    }
+		}
+		 
+
