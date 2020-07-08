@@ -1,4 +1,4 @@
-ackage homework5;
+package homework5;
 
 /* ListNode.java */
 
